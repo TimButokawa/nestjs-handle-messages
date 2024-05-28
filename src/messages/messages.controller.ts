@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { CreateMessageDto } from './dtos/create-message.dto';
 
 /**
  * The `@Controller` decorator is used to define a new controller class.
@@ -17,7 +18,8 @@ export class MessagesController {
   // createMessage() is the method that will be called when a POST request is made to the /messages route.
   @Post()
   // The `@Body` decorator is used to extract the body of the request.
-  createMessage(@Body() body: any) {
+  // The `CreateMessageDto` class is used to validate the body of the request.
+  createMessage(@Body() body: CreateMessageDto) {
     console.log('body', body);
     return 'Create not implemented';
   }
