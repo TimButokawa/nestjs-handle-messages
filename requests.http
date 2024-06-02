@@ -8,7 +8,7 @@ Content-Type: application/json
 
 
 {
-  "message": "Hello World"
+  "content": "Hello World"
 }
 
 ### Get a single message
