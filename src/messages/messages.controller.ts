@@ -17,13 +17,7 @@ import { MessagesService } from './messages.service';
  */
 @Controller('messages')
 export class MessagesController {
-  messagesService = new MessagesService();
-
-  constructor() {
-    // TODO: remove this - this controller depends on the MessagesService class
-    // DO NOT DO THIS IN A REAL APPLICATION, USE DEPENDENCY INJECTION
-    this.messagesService = new MessagesService();
-  }
+  constructor(public messagesService: MessagesService) {}
 
   // listMessages() is the method that will be called when a GET request is made to the /messages route.
   @Get()

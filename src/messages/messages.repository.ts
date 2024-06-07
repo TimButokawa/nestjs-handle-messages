@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 
 /**
@@ -10,6 +11,8 @@ import { readFile, writeFile } from 'fs/promises';
  * - `findAll(): Promise<{ id: { id: string, content: string } }>`
  * - `create(content: string): Promise<{ id: string, content: string }>`
  */
+// @Injectable - Decorates a class that can be managed by the Nest IoC container.
+@Injectable()
 export class MessagesRepository {
   /**
    * Reads the messages.json file and returns the message with the given id.
